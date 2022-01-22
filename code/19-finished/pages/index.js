@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
-import { MongoClient } from 'mongodb';
+//import { MongoClient } from 'mongodb';
 
 import MeetupList from '../components/meetups/MeetupList';
 
@@ -34,16 +34,18 @@ function HomePage(props) {
 
 export async function getStaticProps() {
   // fetch data from an API
-  const client = await MongoClient.connect(
-    'mongodb+srv://maximilian:TU6WdZF2EjFWsqUt@cluster0.ntrwp.mongodb.net/meetups?retryWrites=true&w=majority'
-  );
-  const db = client.db();
+  // const client = await MongoClient.connect(
+  //   'mongodb+srv://maximilian:TU6WdZF2EjFWsqUt@cluster0.ntrwp.mongodb.net/meetups?retryWrites=true&w=majority'
+  // );
+  // const db = client.db();
 
-  const meetupsCollection = db.collection('meetups');
+  // const meetupsCollection = db.collection('meetups');
 
-  const meetups = await meetupsCollection.find().toArray();
+  // const meetups = await meetupsCollection.find().toArray();
 
-  client.close();
+  // client.close();
+
+  const meetups =  JSON.parse('[{"title": "TitleA", "address": "AddressA", "image": "https://media.istockphoto.com/photos/portrait-of-a-cat-picture-id174875518", "_id": "1"}]')
 
   return {
     props: {

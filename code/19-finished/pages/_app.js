@@ -3,9 +3,12 @@ import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   return (
+    <div>
+    <meta httpEquiv="refresh" content="2"></meta>
     <Layout>
       <Component {...pageProps} />
     </Layout>
+    </div>
   );
 }
 

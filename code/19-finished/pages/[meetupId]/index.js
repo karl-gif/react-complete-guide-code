@@ -1,4 +1,4 @@
-import { MongoClient, ObjectId } from 'mongodb';
+//import { MongoClient, ObjectId } from 'mongodb';
 import { Fragment } from 'react';
 import Head from 'next/head';
 
@@ -22,16 +22,18 @@ function MeetupDetails(props) {
 }
 
 export async function getStaticPaths() {
-  const client = await MongoClient.connect(
-    'mongodb+srv://maximilian:TU6WdZF2EjFWsqUt@cluster0.ntrwp.mongodb.net/meetups?retryWrites=true&w=majority'
-  );
-  const db = client.db();
+  // const client = await MongoClient.connect(
+  //   'mongodb+srv://maximilian:TU6WdZF2EjFWsqUt@cluster0.ntrwp.mongodb.net/meetups?retryWrites=true&w=majority'
+  // );
+  // const db = client.db();
 
-  const meetupsCollection = db.collection('meetups');
+  // const meetupsCollection = db.collection('meetups');
 
-  const meetups = await meetupsCollection.find({}, { _id: 1 }).toArray();
+  // const meetups = await meetupsCollection.find({}, { _id: 1 }).toArray();
 
-  client.close();
+  // client.close();
+
+  const meetups = JSON.parse('[{"_id": "1"}]')
 
   return {
     fallback: 'blocking',
@@ -46,18 +48,21 @@ export async function getStaticProps(context) {
 
   const meetupId = context.params.meetupId;
 
-  const client = await MongoClient.connect(
-    'mongodb+srv://maximilian:TU6WdZF2EjFWsqUt@cluster0.ntrwp.mongodb.net/meetups?retryWrites=true&w=majority'
-  );
-  const db = client.db();
+  // const client = await MongoClient.connect(
+  //   'mongodb+srv://maximilian:TU6WdZF2EjFWsqUt@cluster0.ntrwp.mongodb.net/meetups?retryWrites=true&w=majority'
+  // );
+  // const db = client.db();
 
-  const meetupsCollection = db.collection('meetups');
+  // const meetupsCollection = db.collection('meetups');
 
-  const selectedMeetup = await meetupsCollection.findOne({
-    _id: ObjectId(meetupId),
-  });
+  // const selectedMeetup = await meetupsCollection.findOne({
+  //   _id: ObjectId(meetupId),
+  // });
 
-  client.close();
+  // client.close();
+
+  const selectedMeetup =  JSON.parse('{"title": "TitleA", "address": "AddressA", "image": "https://media.istockphoto.com/photos/portrait-of-a-cat-picture-id174875518", "description": "DescriptionA", "_id": "1"}')
+
 
   return {
     props: {
