@@ -13,7 +13,7 @@ function MainNavigation() {
             <Link href='/'>All Pets</Link>
           </li>
           <li>
-            <Link href='/new-meetup'>Add New Meetup</Link>
+            <Link href='/new-meetup'>Add New Pet</Link>
           </li>
         </ul>
       </nav>
