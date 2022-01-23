@@ -4,6 +4,8 @@ import Head from 'next/head';
 
 import MeetupList from '../components/meetups/MeetupList';
 
+let count = 1;
+
 function HomePage(props) {
   return (
     <Fragment>
@@ -44,6 +46,10 @@ export async function getStaticProps() {
   // const meetups = await meetupsCollection.find().toArray();
 
   // client.close();
+
+  console.log("Refresh: " + count);
+
+  count = count + 1;
 
   const meetups =  JSON.parse('[{"title": "TitleA", "address": "AddressA", "image": "https://media.istockphoto.com/photos/portrait-of-a-cat-picture-id174875518", "_id": "1"}]')
 
