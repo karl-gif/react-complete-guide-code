@@ -6,11 +6,11 @@ function MainNavigation() {
 
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>React Meetups</div>
+      <div className={classes.logo}>Pets</div>
       <nav>
         <ul>
           <li>
-            <Link href='/'>All Meetups</Link>
+            <Link href='/'>All Pets</Link>
           </li>
           <li>
             <Link href='/new-meetup'>Add New Meetup</Link>
@@ -18,7 +18,7 @@ function MainNavigation() {
         </ul>
       </nav>
     </header>
-  );
+  )
 }
 
 export default MainNavigation;

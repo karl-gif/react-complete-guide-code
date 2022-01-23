@@ -11,7 +11,7 @@ function MeetupDetail(props) {
       <address>{props.address}</address>
       <p>{props.description}</p>
     </section>
-  );
+  )
 }
 
 export default MeetupDetail;

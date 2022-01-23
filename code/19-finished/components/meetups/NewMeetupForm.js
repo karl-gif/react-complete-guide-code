@@ -56,7 +56,7 @@ function NewMeetupForm(props) {
         </div>
       </form>
     </Card>
-  );
+  )
 }
 
 export default NewMeetupForm;

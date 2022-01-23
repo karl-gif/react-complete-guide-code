@@ -25,7 +25,7 @@ function MeetupItem(props) {
         </div>
       </Card>
     </li>
-  );
+  )
 }
 
 export default MeetupItem;
