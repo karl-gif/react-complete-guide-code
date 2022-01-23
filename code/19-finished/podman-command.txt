@@ -1,0 +1,7 @@
+podman build -t test:1 .
+
+podman run -p52000:3000 -d test:1
+
+podman logs -f <container>
+
+podman exec -it <container> /bin/bash
