@@ -9,7 +9,7 @@ COPY . .
 #USER root
 
 #RUN npm install --only=prod && fix-permissions ./ && npm run build
-RUN  npm install  &&   npm run build
+RUN  npm install  && fix-permissions ./  &&   npm run build
 
 EXPOSE 8080
 
