@@ -13,6 +13,6 @@ RUN  npm install  && fix-permissions ./  &&   npm run build
 
 EXPOSE 3000
 
-USER 1001
+USER root
 
 CMD ["sh", "-c", "echo 'sleep 2' && sleep 2 && npm start"]
