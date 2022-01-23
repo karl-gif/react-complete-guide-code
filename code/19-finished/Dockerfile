@@ -6,7 +6,7 @@ WORKDIR /opt/app-root
 
 COPY . .
 
-USER root
+#USER root
 
 #RUN npm install --only=prod && fix-permissions ./ && npm run build
 RUN  npm install  &&   npm run build
