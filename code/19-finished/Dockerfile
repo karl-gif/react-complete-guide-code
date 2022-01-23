@@ -6,12 +6,12 @@ WORKDIR /opt/app-root
 
 COPY . .
 
-#USER root
-
 #RUN npm install --only=prod && fix-permissions ./ && npm run build
 RUN  npm install  && fix-permissions ./  &&   npm run build
 
 EXPOSE 3000
+
+USER root
 
 RUN chgrp -R 0 /opt/app-root && \
     chmod -R g=u /opt/app-root && \
