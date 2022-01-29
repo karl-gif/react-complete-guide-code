@@ -18,7 +18,7 @@ const useFetchHook = () => {
   mutex.run(async () => {
       mutex.lock();
       try {
-          sleep(2000);          
+          sleep(5000);          
           mutex.unlock();
       } catch (e) {
           mutex.unlock();
