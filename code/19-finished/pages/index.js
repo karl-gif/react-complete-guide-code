@@ -6,30 +6,44 @@ import MeetupList from '../components/meetups/MeetupList';
 
 let count = 1;
 
-function sleep(delay) {
+function sleep(delay) { 
   var start = new Date().getTime();
   while (new Date().getTime() < start + delay);
 }
 
-const useFetchHook = () => {
+const useFetchHook = () => {  
   const MutexRunner = useMutex();
   const mutex = new MutexRunner('pause');
 
-  mutex.run(async () => {
+  mutex.run(() => {     
       mutex.lock();
-      try {
-          sleep(5000);          
+      try {                
+          sleep(5000);                        
           mutex.unlock();
-      } catch (e) {
+      } catch (e) {        
           mutex.unlock();
       }
   });
 };
 
-function HomePage(props) {
+function HomePage(props) { 
   {useFetchHook()}
-  return (    
-    <Fragment>
+
+  // console.log("Refresh: " + count);
+
+  // count = count + 1;
+
+  // const meetups =  JSON.parse('[{"title": "TitleA", "address": "AddressA", "image": "https://media.istockphoto.com/photos/portrait-of-a-cat-picture-id174875518", "_id": "1"}]')
+
+  // const meetupsArray = meetups.map((meetup) => ({
+  //       title: meetup.title,
+  //       address: meetup.address,
+  //       image: meetup.image,
+  //       id: meetup._id.toString(),
+  //     }))  
+
+  return (      
+    <Fragment>   
       <Head>
         <title>Pets</title>
         <meta
